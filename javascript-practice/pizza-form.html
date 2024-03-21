@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Pizza Order Form</title>
+<script>
+  function validateOrder() {
+  const customerName = document.getElementById("customerName").value.trim();
+  const phoneNumber = document.getElementById("phoneNumber").value.trim();
+  let errorMessage = "";
+
+ 
+  if (customerName === "") {
+    errorMessage += "Customer Name cannot be empty.\n";
+    document.getElementById("customerName").style.backgroundColor = "yellow";
+    document.getElementById("customerName").focus(); // Set focus on the textbox
+  } else {
+    document.getElementById("customerName").style.backgroundColor = ""; // Reset background color
+  }
+
+  // Validate phone number
+  const phoneRegex = /^\d{10}$/; // Regular expression for phone number (10 digits)
+  if (!phoneNumber.match(phoneRegex)) {
+    errorMessage += "Invalid Phone Number. Please enter a valid number in XX-XXX-XXXX format.\n";
+    document.getElementById("phoneNumber").style.backgroundColor = "yellow";
+    document.getElementById("phoneNumber").focus();
+  } else {
+    document.getElementById("phoneNumber").style.backgroundColor = "";
+  }
+
+  // Validate pizza selection
+  let pizzaSelected = false;
+  const pizzaCheckboxes = document.querySelectorAll("input[type='checkbox'][name='pizzaType']");
+  for (const checkbox of pizzaCheckboxes) {
+    if (checkbox.checked) {
+      pizzaSelected = true;
+      break;
+    }
+  }
+
+  if (!pizzaSelected) {
+    errorMessage += "Please select at least one pizza type.\n";
+  }
+
+  // Validate pizza quantity if a pizza is selected
+  if (pizzaSelected) {
+    let hasInvalidQuantity = false;
+    for (const checkbox of pizzaCheckboxes) {
+      if (checkbox.checked) {
+        const quantityInput = document.getElementById(`quantity-${checkbox.value}`);
+        const quantity = Number(quantityInput.value.trim());
+        if (isNaN(quantity) || quantity <= 0) {
+          errorMessage += `Invalid quantity for ${checkbox.value} pizza. Please enter a numeric value greater than 0.\n`;
+          quantityInput.style.backgroundColor = "yellow";
+          quantityInput.focus();
+          hasInvalidQuantity = true;
+          break;
+        } else {
+          quantityInput.style.backgroundColor = "";
+        }
+      }
+    }
+    if (hasInvalidQuantity) {
+      return false; // Stop further processing if there's an invalid quantity
+    }
+  }
+
+  // Confirmation for extra toppings (optional)
+  if (confirm("Do you want extra toppings? (Rs 50 will be added)")) {
+    const totalPrice = calculateTotal(true); // Add Rs 50 for extra toppings
+    document.getElementById("totalPrice").innerText = `Total Price: Rs ${totalPrice}`;
+  } else {
+    const totalPrice = calculateTotal(false);
+    document.getElementById("totalPrice").innerText = `Total Price: Rs ${totalPrice}`;
+  }
+
+  if (errorMessage !== "") {
+    alert(errorMessage);
+    return false; // Prevent form submission if there are errors
+  }
+
+  return true; // Allow form submission if all validations pass
+}
+
+function calculateTotal(extraToppings) {
+  let totalPrice = 0;
+  const pizzaCheckboxes = document.querySelectorAll("input[type='checkbox'][name='pizzaType']");
+  for (const checkbox of pizzaCheckboxes) {
+    if (checkbox.checked) {
+      const quantityInput = document.getElementById(`quantity-${checkbox.value}`);
+      const quantity = Number(quantityInput.value.trim());
+      const pizzaPrice = Number(checkbox.dataset.price); // Assuming price data-attribute is set on checkboxes
+      totalPrice += quantity * pizzaPrice;
+    }
+  }
+
+  if (extraToppings) {
+    totalPrice += 50;
+  }
+
+  return totalPrice;
+}
+
+</script> </head>
+<body>
+
+<h2>Pizza Order Form</h2>
+
+<form onsubmit="return validateOrder()">
+  <label for="customerName">Customer Name:</label>
+  <input type="text" id="customerName" name="customerName"><br><br>
+
+  <label for="phoneNumber">Phone Number:</label>
+  <input type="text" id="phoneNumber" name="phoneNumber"><br><br>
+
+  <label for="pizzaType">Select Pizza(s):</label><br>
+  <input type="checkbox" id="pizzaType1" name="pizzaType" value="Margherita" data-price="250"> Margherita - Rs 250<br>
+  <input type="checkbox" id="pizzaType2" name="pizzaType" value="Peperroni" data-price="300"> Pepperoni - Rs 300<br>
+  <input type="checkbox" id="pizzaType3" name="pizzaType" value="Veggie" data-price="280"> Veggie - Rs 280<br><br>
+
+  <label for="quantity-Margherita">Quantity (Margherita):</label>
+  <input type="number" id="quantity-Margherita" min="1" value="0"><br>
+  <label for="quantity-Peperroni">Quantity (Peperroni):</label>
+  <input type="number" id="quantity-Peperroni" min="1" value="0"><br>
+  <label for="quantity-Veggie">Quantity (Veggie):</label>
+  <input type="number" id="quantity-Veggie" min="1" value="0"><br><br>
+
+  <button type="submit">Calculate Order Total</button>
+</form>
+
+<p id="totalPrice"></p>
+
+</body>
+</html>

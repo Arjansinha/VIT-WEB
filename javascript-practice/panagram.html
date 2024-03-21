@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pangram Checker</title>
+<script>
+  function checkPangram() {
+  const text1 = document.getElementById('textInput1').value.toLowerCase();
+  const text2 = document.getElementById('textInput2').value.toLowerCase();
+  const combinedText = text1 + text2; 
+  
+  const alphabet = 'abcdefghijklmnopqrstuvwxyz';
+  let missingLetters = '';
+
+  for (let char of alphabet) {
+    if (combinedText.indexOf(char) === -1) {
+      missingLetters += char + ' ';
+    }
+  }
+
+  if (missingLetters === '') {
+    document.getElementById('result').innerText = "It's a Pangram Message";
+  } else {
+    document.getElementById('result').innerText = "Missing letters: " + missingLetters;
+  }
+}
+
+</script>
+</head>
+<body>
+
+<form id="pangramForm">
+  <label for="textInput1">Text 1:</label>
+  <input type="text" id="textInput1" required><br><br>
+  
+  <label for="textInput2">Text 2:</label>
+  <input type="text" id="textInput2" required><br><br>
+  
+  <button type="button" onclick="checkPangram()">Find</button>
+</form>
+
+<p id="result"></p>
+
+<script src="pangram.js"></script>
+</body>
+</html>

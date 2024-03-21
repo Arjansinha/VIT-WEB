@@ -1,0 +1,51 @@
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    background-color: #898787;
+  }
+  
+  .container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+  }
+  
+  .image {
+    width: 40%;
+    object-fit: cover;
+  }
+  
+  .content {
+    margin: 8% 5% 0 5%;
+    flex: 1;
+    padding: 1em;
+    
+  }
+  
+  .inner {
+    background-color: rgba(241, 241, 241, 0.444);
+    padding: 1em;
+    border-radius: 5px;
+  }
+  
+  h2 {
+    font-size: 2em;
+    color: #333;
+    margin: 1em 0;
+  }
+  
+  p {
+    font-size: 1.2em;
+    line-height: 1.5;
+    padding-left: 10%;
+    margin: 0.5em 0;
+  }
+  
+  .second {
+    border-top: 2px dotted #333;
+    border-right: 2px dashed #333;
+    border-left: 2px dashed #333;
+    border-bottom: 2px solid #333;
+}

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>javascript</title>
+<script>
+function showalert(){
+    alert("Hello world.");
+    displaynumber();
+}
+function displaynumber(){
+    var number=prompt("Enter a number:");
+    alert("You entered: "+number);
+    displayproduct();
+}
+function displayproduct(){
+    var num1=parseInt(prompt("Enter the first number:"));
+    var num2=parseInt(prompt("Enter the second number:"));
+    var product=num1*num2;
+    alert("Product: "+product);
+    displaysum();
+}
+function displaysum(){
+    var num1=parseInt(prompt("Enter the first number:"));
+    var num2=parseInt(prompt("Enter the second number:"));
+    var sum=num1+num2;
+    alert("Sum: "+sum);
+    displaylarger();
+}
+function displaylarger(){
+    var num1=parseInt(prompt("Enter the first number:"));
+    var num2=parseInt(prompt("Enter the second number:"));
+    var larger=(num1>num2)?num1:num2;
+    alert("Larger number: "+larger);
+    displayascendingorder();
+}
+function displayascendingorder(){
+    var num1=parseInt(prompt("Enter the first number:"));
+    var num2=parseInt(prompt("Enter the second number:"));
+    alert("Numbers in ascending order: "+Math.min(num1, num2)+", "+Math.max(num1,num2));
+    displaynumbersseparately();
+}
+function displaynumbersseparately(){
+    for(var i=0;i<=5;i++){
+        alert(i);
+    }
+    displaynumberstogether();
+}
+function displaynumberstogether(){
+    var numbers="";
+    for(var i=0;i<=5;i++){
+        numbers+=i+" ";
+    }
+    alert("Numbers: "+numbers);
+    displaymultiplesof3();
+}
+function displaymultiplesof3(){
+    var multiplesOf3="";
+    for(var i=0;i<=20;i++){
+        if(i%3===0){
+            multiplesOf3+=i+" ";
+        }
+    }
+    alert("Multiples of 3 between 0 and 20: "+multiplesOf3);
+    displaydescendingnumbers();
+}
+function displaydescendingnumbers(){
+    var descendingnumbers="";
+    for(var i=9;i>=0;i--){
+        descendingnumbers+=i+" ";
+    }
+    alert("Descending numbers: "+descendingnumbers);
+    promptnumberinrange();
+}
+function promptnumberinrange(){
+    var inputnumber;
+    do{
+        inputnumber=parseInt(prompt("Enter a number between 0 and 100:"));
+        if(inputnumber<0 || inputnumber>100  || isNaN(inputnumber)){
+            alert("Error: Please enter a valid number between 0 and 100.");
+        }
+    }while(inputnumber<0 || inputnumber>100 || isNaN(inputnumber));
+    alert("You entered: "+inputnumber);
+    displaysumofintegers();
+}
+function displaysumofintegers(){
+    var inputnumber=parseInt(prompt("Enter an integer:"));
+    var sum=0;
+    for(var i=0;i<=inputnumber;i++){
+        sum+=i;
+    }
+    alert("Sum of integers from 0 to "+inputnumber+": "+sum);
+    displayaverageOfintegers();
+}
+function displayaverageOfintegers(){
+    var inputNumber=parseInt(prompt("Enter an integer:"));
+    var sum=0;
+    for(var i=0;i<=inputnumber;i++){
+        sum+=i;
+    }
+    var average=sum/(inputnumber+1);
+    alert("Average of integers from 0 to "+inputnumber+": "+average);
+}
+</script>
+</head>
+<body>
+<h2>features</h2>
+<button onclick="showalert()">Start</button>
+</body>
+</html>

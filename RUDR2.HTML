@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Median of Two Sorted Arrays</title>
+</head>
+<body>
+    <h2>Median of Two Sorted Arrays</h2>
+    <label for="input1">Enter elements for input 1 (comma-separated):</label>
+    <input type="text" id="input1" placeholder="e.g., 1,2,3"><br><br>
+    <label for="input2">Enter elements for input 2 (comma-separated):</label>
+    <input type="text" id="input2" placeholder="e.g., 4,5,6"><br><br>
+    <button onclick="calculateMedian()">Calculate Median</button>
+    <p id="output"></p>
+
+    <script>
+        function calculateMedian() {
+            const input1 = document.getElementById("input1").value.trim();
+            const input2 = document.getElementById("input2").value.trim();
+
+            const nums1 = input1.split(",").map(Number);
+            const nums2 = input2.split(",").map(Number);
+
+            const median = findMedianSortedArrays(nums1, nums2);
+            document.getElementById("output").textContent = "Median: " + median.toFixed(5);
+        }
+
+        function findMedianSortedArrays(nums1, nums2) {
+            const mergedArray = mergeSortedArrays(nums1, nums2);
+            const length = mergedArray.length;
+
+            if (length % 2 === 0) {
+                const mid = length / 2;
+                return (mergedArray[mid - 1] + mergedArray[mid]) / 2;
+            } else {
+                return mergedArray[Math.floor(length / 2)];
+            }
+        }
+
+        function mergeSortedArrays(nums1, nums2) {
+            let result = [];
+            let i = 0;
+            let j = 0;
+
+            while (i < nums1.length && j < nums2.length) {
+                if (nums1[i] < nums2[j]) {
+                    result.push(nums1[i]);
+                    i++;
+                } else {
+                    result.push(nums2[j]);
+                    j++;
+                }
+            }
+
+            while (i < nums1.length) {
+                result.push(nums1[i]);
+                i++;
+            }
+
+            while (j < nums2.length) {
+                result.push(nums2[j]);
+                j++;
+            }
+
+            return result;
+        }
+    </script>
+</body>
+</html>

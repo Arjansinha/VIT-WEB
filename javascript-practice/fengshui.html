@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Feng Shui House Number Calculator</title>
+<script>
+function calculateFengShui() {
+    var address = document.getElementById("address").value;
+    var numbers = address.match(/\d/g);
+    var fengShuiNumber = 0;
+
+    if (numbers) {
+        for (var i = 0; i < numbers.length; i++) {
+            fengShuiNumber += parseInt(numbers[i]);
+        }
+        while (fengShuiNumber > 9) {
+            fengShuiNumber = calculateSingleDigit(fengShuiNumber);
+        }
+    }
+
+    document.getElementById("result").innerHTML = interpretFengShuiNumber(fengShuiNumber);
+}
+
+function calculateSingleDigit(number) {
+    var sum = 0;
+    while (number) {
+        sum += number % 10;
+        number = Math.floor(number / 10);
+    }
+    return sum;
+}
+
+function interpretFengShuiNumber(number) {
+    var interpretations = {
+        0: "Potential",
+        1: "New Beginnings",
+        2: "Balance",
+        3: "Family,self-expression",
+        4: "Stability",
+        5: "Adventure",
+        6: "Calm,patience",
+        7: "Contemplation,solitude",
+        8: "Abundance,success in business",
+        9: "Accomplishment"
+    };
+
+    return interpretations[number] || "unknown significance";
+}
+</script>
+</head>
+<body>
+<h2>Feng Shui House Number Calculator</h2>
+<label for="address">Enter your address:</label>
+<textarea id="address" rows="4" cols="50"></textarea><br><br>
+<button onclick="calculateFengShui()">Calculate Feng Shui Number</button>
+<div id="result"></div>
+</body>
+</html>

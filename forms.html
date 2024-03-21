@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="/server">
+        <fieldset>
+            <legend>Academic information</legend>
+            <div>
+                <label for="degree">Degree</label>
+                <select name="Degree" id="degree">
+                    <option value="MBA">Master of Business Administration</option>
+                    <option value="BTECH">Bachelor of Technology</option>
+                    <option value="BCOM">Bachelor of Commerce</option>
+                    <option value="BBA">Bachelor of Business Administration</option>
+                    <option value="MBBS">Bachelor of Medicine and Bachelor of Surgery </option>
+                </select>
+            </div>
+            <div>
+                <label for="SID">Student ID</label>
+                <input type="text" name="StudentId" id="SID">
+            </div>
+            <div>
+                <label for="Class Attended" >Class Attended</label>
+                <textarea rows="5" wrap="soft">
+                    Geography
+                    Mathematics
+                    English
+                  </textarea>
+                  
+            </div>
+
+        </fieldset>
+        <fieldset>
+            <legend>Personal details</legend>
+            <div>
+                <label for="fn">First Name</label>
+                <input type="text" name="First_Name" id="fn">
+            </div>
+            <div>
+                <label for="ln">Last Name</label>
+                <input type="text" name="Last_Name" id="ln">
+            </div>
+            <div>
+                Gender:
+                <input type="radio" name="gen" id="male" value="Male">
+                <label for="male">Male</label>
+                <input type="radio" name="gen" id="female" value="Female">
+                <label for="female">Female</label>
+            </div>
+            <div>
+                <label id="mail">Email</label>
+                <input type="email" name="email" id="mail">
+            </div>
+        </fieldset>
+        <br>
+        <div>
+            <textarea placeholder="TERMS AND CONDITIONS...."></textarea>
+        </div>
+        <button type="submit">Send Form</button>
+        <button type="reset">Clear Form</button>
+    </form>
+</body>
+</html>

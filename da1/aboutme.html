@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Portfolio</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+</head>
+<body>
+  <style>
+    body{
+      background-color: pink;
+      font-size: 30px;
+      border: #222;
+    }
+    p{
+      font-family: 'Roboto', sans-serif;}
+    .container {
+  display: flex;
+  font-size: 20px;
+}
+
+.emotion,
+.project {
+  width: 50%;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.emotion img,
+.project img {
+  max-width: 100%;
+}
+
+.emotion h3,
+.project h3 {
+  margin-top: 10px; 
+}
+
+.emotion p,
+.project p {
+  margin-top: 5px;
+}
+#Subjects {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  margin: 20px;
+}
+
+.subject {
+  background-color: #f5f5f5;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  width: 300px;
+  margin: 10px;
+  transition: all 0.3s ease-in-out;
+}
+
+.subject:hover {
+  background-color: #f0f0f0;
+  transform: scale(1.05);
+}
+
+h3 {
+  color: #222;
+  margin-bottom: 10px;
+}
+
+p {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.subject:nth-child(1) { background-color: #f7e8e8; }
+.subject:nth-child(2) { background-color: #e8f0f7; }
+.subject:nth-child(3) { background-color: #f7f0e8; }
+.subject:nth-child(4) { background-color: #e8f7f0; }
+
+body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    
+    header {
+      background-color: #333;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+    
+    nav ul {
+      list-style-type: none;
+    }
+    
+    nav ul li {
+      display: inline;
+      margin-right: 20px;
+    }
+    
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+    }
+    
+    section {
+      padding: 50px;
+    }
+    
+    
+    .emotion {
+      margin-bottom: 40px;
+    }
+    
+    .project img {
+      max-width: 100%;
+    }
+    
+    
+    form label,
+    form input,
+    form textarea,
+    form button {
+      display: block;
+      margin-bottom: 10px;
+    }
+    
+    form input,
+    form textarea {
+      width: 100%;
+    }
+    
+    form button {
+      background-color: #333;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      cursor: pointer;
+    }
+    
+    footer {
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+
+    
+    favorite[hidden] {
+      display: none;
+      margin: 20px;
+  padding: 20px;
+  border-radius: 5px;
+  background-color: #f5f5f5;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+ 
+
+
+.title {
+  color: #222;
+  font-size: 1.5em;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.ol {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+
+a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+  color: #333;
+}
+
+i {
+  font-style: italic;
+}
+
+i + br {
+  margin-top: 5px;
+}
+
+
+    }
+    </style>
+  <header>
+    <h1>ARJAN SINHA</h1>
+    <h5>Bangalore,Karnataka</h5>
+    <nav>
+      <ul>
+        <li><a href="#about">About Me</a></li>
+        <li><a href="#Subjects">Subjects</a></li>
+        <li><a href="#favorites">Fav Movie</a></li>
+        <li><a href="#emotion">Emotion</a></li>
+        <li><a href="#neighbours">Neighbours</a></li>
+        <li><a href="#skills">Programming Languages</a></li>
+        
+      </ul>
+    </nav>
+  </header>
+
+  <section id="about">
+    <h2>About Me</h2>
+    <p>Welcome to my portfolio! I'm a <b>web developer</b> passionate about creating beautiful and functional websites.</p>
+    <p>I love playing <b>badminton</b> and am a <b>fitness freak</b> as well</p>
+    
+  </section>
+
+  <section id="Subjects">
+    <h2>Subjects</h2>
+  
+    <div class="subject">
+      <h3>WEB DEVELOPMENT</h3>
+      <p><b>Front-End Development</b><br>
+        Focuses on the user-facing part of a website, what visitors see and interact with.
+        Technologies used include HTML (structure), CSS (styling), and JavaScript (interactivity).
+        Requires skills in design principles, responsiveness, and user experience (UX).
+      </p>
+      <p><b>Back-End Development</b><br>
+        Deals with the server-side of a website, managing data, databases, and application logic.
+        Languages like Python, PHP, Ruby, and Node.js are commonly used.
+        Requires understanding of server administration, databases, and application architecture.
+      </p>
+      <p><b>Full-Stack Development</b><br>
+        Combines both front-end and back-end development skills.
+        Full-stack developers can build and maintain complete web applications.
+        Requires a broader understanding of the entire development process.
+      </p>
+    </div>
+  
+    <div class="subject">
+      <h3>DSA</h3>
+      <p>DSA stands for Data Structures and Algorithms, and it forms the foundational layer of computer science. It's essential for anyone interested in programming, web development, software engineering, data science, and countless other tech fields.</p>
+    </div>
+  
+    <div class="subject">
+      <h3>OPERATING SYSTEMS</h3>
+      <p>An operating system (OS) is the software that manages all the hardware and software resources of a computer. It acts as an intermediary between the user and the computer hardware, providing a platform for running applications and managing files. It is the fundamental software that allows users to interact with their computers and run other programs.</p>
+    </div>
+  
+    <div class="subject">
+      <h3>DBMS</h3>
+      <p>Database Management Systems (DBMS) is a fascinating subject that covers the creation, manipulation, management, and access of organized data within electronic systems.</p>
+    </div>
+  </section>
+  
+  <section id="favorites" class="favorite">
+    <h2 class="title">My Top 3 MOVIES/TV SHOWS</h2>
+    <ol class="ol">
+      <li>
+        <a href="https://www.imdb.com/title/tt0111161/">The Matrix</a> (1999) - A mind-bending sci-fi action film exploring reality and free will.
+      </li>
+      <li>
+        <i>Dune</i> by Frank Herbert - A classic sci-fi novel filled with adventure, politics, and ecological themes.
+        <br>
+        <a href="https://dune.fandom.com/">Explore the Dune universe on the fan wiki!</a>
+      </li>
+      <li>
+        <i>Avatar: The Last Airbender</i> (2005-2008) - An animated TV show featuring diverse characters, captivating storytelling, and beautiful animation.
+        <br>
+        <a href="https://avatar.fandom.com/">Join the Avatar fan community!</a>
+      </li>
+    </ol>
+  </section>
+  
+  
+
+  <section id="emotions">
+    <h2>My emotions</h2>
+    <div class="container">
+      <div class="emotion">
+        <img src="images-vit/images.jpeg" alt="Happy">
+        <h3>Happy</h3>
+        <p>This is a picture that represents happiness.</p>
+      </div>
+      <div class="emotion">
+        <img src="images-vit/images sad.png" alt="Sad" height="190px">
+        <h3>Sad</h3>
+        <p>This is a picture that represents sadness.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="neighbours">
+    <h2>My Neighbours</h2>
+    <p>Here are my neighbours:</p>
+    <ul>
+      <li>Anand<p>Anand is a gentle nice guy,he is a hardworking individual </p></li>
+      <li>Nitish<p>Nitish is a caring guy,he is very helpful</p></li>
+      <li>Aditya<p>Aditya is very nice to be around,he always lightens the mood</p></li>
+    </ul>
+  
+    <section id="skills">
+      <h2>Programming Skills</h2>
+      <ul>
+        <li>
+          <h3>Python:</h3>
+          <p> I can assist with data manipulation, web development, scripting, automation, machine learning, and more.</p>
+</li>
+          <li> <h3>JavaScript: </h3> <p>I can help with both front-end and back-end web development, including frameworks like React, Angular, and Node.js.</p></li>
+            
+            <li><h3>Java:</h3> <p>I can assist with application development, Android app development, and enterprise solutions.</p></li>
+              
+              <li><h3>C/C++:</h3> <p>I can help with system programming, game development, and performance-critical applications.</p></li>
+            
+           
+          
+        </li>
+        </ul>
+    </section>
+    
+
+
+  <footer>
+    <p>&copy; 2024 My Page</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

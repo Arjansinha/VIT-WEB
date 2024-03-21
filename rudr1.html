@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Course Code Validation</title>
+<script>
+    function validateCourseCode() {
+        var courseType = document.getElementById("courseType").value;
+        var courseCode = document.getElementById("courseCode").value.toUpperCase(); // Convert to uppercase for consistency
+
+        // Check if the course code matches the format
+        var regex = /^[A-Z]{4}\d{3}[CLE]$/;
+        if (courseCode.length !== 8 || !regex.test(courseCode)) {
+            document.getElementById("output").innerHTML = "Invalid";
+            return;
+        }
+
+        // Check if the course type matches
+        var lastChar = courseCode.charAt(7);
+        var expectedType = "";
+        if (courseType === "1") expectedType = "C";
+        else if (courseType === "2") expectedType = "E";
+        else if (courseType === "3") expectedType = "L";
+
+        if (lastChar !== expectedType) {
+            document.getElementById("output").innerHTML = "Invalid";
+        } else {
+            document.getElementById("output").innerHTML = "Valid";
+        }
+    }
+</script>
+</head>
+<body>
+    <h2>Course Code Validation</h2>
+    <form>
+        <label for="courseType">Choose course type:</label>
+        <select id="courseType">
+            <option value="1">Core</option>
+            <option value="2">Elective</option>
+            <option value="3">Lab</option>
+        </select><br><br>
+        <label for="courseCode">Enter your course code:</label>
+        <input type="text" id="courseCode" maxlength="8" required><br><br>
+        <button type="button" onclick="validateCourseCode()">Validate</button>
+    </form>
+    <p id="output"></p>
+</body>
+</html>

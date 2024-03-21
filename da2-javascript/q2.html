@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: lightblue;
+}
+
+.container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    text-align: center;
+    color: #333;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+p#result {
+    margin-top: 20px;
+    text-align: center;
+    font-weight: bold;
+}
+</style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reverse Number</title>
+<script>
+function reversenumber(number){
+    const numString=number.toString();
+    const reversedNumString=numString.split('').reverse().join('');
+    const reversednumber=parseInt(reversedNumString);
+    return reversednumber;
+}
+function display() {
+    const inputnumber=document.getElementById('inputnumber').value;
+    const reversednumber=reversenumber(inputnumber);
+    document.getElementById('result').innerText = `Reversed Number:${reversednumber}`;
+}
+</script>
+</head>
+<body>
+<h2>Reverse a Number</h2>
+<input type="text" id="inputnumber" placeholder="Enter a number">
+<button onclick="display()">Reverse</button>
+<p id="result"></p>
+</body>
+</html>

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Website</title>
+    <style>
+        body {
+            background-color: black; 
+            margin: 0;
+            padding: 0;
+        }
+        
+        header {
+            background-color: black; 
+            text-align: left;
+            padding: 20px 0;
+        }
+
+        h1 {
+            background-color: black; 
+            color: #FFFF00; 
+            
+            font-size: 50px;
+        }
+        
+        nav {
+            background-color: #FFFF00;
+            text-align: left; 
+            padding: 10px;
+            margin-top: 10px;
+        }
+        
+        nav a {
+            color: black; 
+            text-decoration: none;
+            margin-right: 20px;
+        }
+        
+        nav a:not(:last-child)::after {
+            content: "|";
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+        
+        nav a:hover {
+            text-decoration: underline;
+        }
+        
+        main {
+            padding: 20px;
+            color: white;
+        }
+        
+        footer {
+            background-color: #FFFF00; 
+            text-align: left;
+            padding: 10px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        
+        .options {
+            background-color: #FFFF00; 
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            padding: 10px;
+        }
+        
+        .options a {
+            color: black;
+            text-decoration: none;
+            margin-right: 20px;
+        }
+        
+        .options a:hover {
+            text-decoration: underline;
+        }
+        
+        .textbox {
+            background-color: #D3D3D3;
+            text-align: left;
+            padding: 10px;
+            position: fixed;
+            top: 250px; 
+            right: 20px;
+            width: 300px; 
+        }
+
+        .textbox p {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1 font size="50">Welcome! Learn Html5</h1>
+</header>
+
+<nav class="options">
+    <a href="#">Home</a>
+    <a href="#">About Us</a>
+    <a href="#">Services</a>
+    <a href="#">Contact</a>
+</nav>
+
+<main>
+    <h3>HOME<br></br></h3>
+    <p>
+
+        Our awesome templates include ressponsive web templates, HTML5, CSS & jQuery website templates, single page<br> website templates, Flash templates, ecommerce website templates, wordpress themes, Joomla templates, Facebook<br> templates and morel Our templates include the source files so it can be customized completely.<br></br>
+        
+        Our latest templates are on the cutting edge of web design and technology and include amazing features like homepage<br> intro slideshow animations powered by jQuery, drop down menus, custom fonts, full screen background images, contact<br> us forms, google maps, social networking icons, rollover effects, photo galleries and more! Click on the Live Demo button<br> in the preview page to see all the cool features live online.<br></br>
+    </p>
+    <h3>CONTACT<br></br></h3>
+    <p>Contact us by email or by filling out the form<br></br></p>
+
+</main>
+
+<footer>
+    <p>Copyright &copy; 2013 enthosweb</p>
+</footer>
+
+<div class="textbox">
+    <p><b>BLOG</b><br></br>
+    the EntheosWeb Blog is the<br>best resource site for graphic &<br>web design tutorial and <br>resources.<br></br>
+    <ul type="disc">
+        <li style="color: #acab62;">Tutorials</li>
+        <li style="color: #acab62;">ideas & inspiration</li>
+        <li style="color: #acab62;">best resources</li>
+        <li style="color: #acab62;">freebies</li>
+    </ul>
+    you will find tutorials on<br>photoshop,illustrator,flash</p>
+</div>
+
+</body>
+</html>

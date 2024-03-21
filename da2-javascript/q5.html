@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <style>
+    body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #f0f0f0;
+}
+
+.container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    text-align: center;
+    color: #333;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="number"] {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    background-color: #007bff;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+p {
+    text-align: center;
+    margin-top: 20px;
+    font-weight: bold;
+    color: #333;
+}
+
+  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Arithmetic Operations</title>
+<script>
+function performoperations(){
+    const num1=parseFloat(document.getElementById('num1').value);
+    const num2=parseFloat(document.getElementById('num2').value);
+    const additionresult=num1+num2;
+    document.getElementById('additionresult').innerText=`Addition:${additionresult}`;
+    const subtractionresult=num1-num2;
+    document.getElementById('subtractionresult').innerText=`Subtraction:${subtractionresult}`;
+    const multiplicationresult=num1*num2;
+    document.getElementById('multiplicationresult').innerText=`Multiplication:${multiplicationresult}`;
+    if(num2 !==0){
+        const divisionresult=num1/num2;
+        document.getElementById('divisionresult').innerText=`Division:${divisionresult}`;
+    }else{
+        document.getElementById('divisionresult').innerText="Division by zero is undefined";
+    }
+}
+</script>
+</head>
+<body>
+<h2>Arithmetic Operations</h2>
+<label for="num1">Enter first number:</label>
+<input type="number" id="num1" placeholder="Enter first number">
+<br><br>
+<label for="num2">Enter second number:</label>
+<input type="number" id="num2" placeholder="Enter second number">
+<br><br>
+<button onclick="performoperations()">Perform operations</button>
+<br><br>
+<p id="additionresult"></p>
+<p id="subtractionresult"></p>
+<p id="multiplicationresult"></p>
+<p id="divisionresult"></p>
+</body>
+</html>
