@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chaldean Destiny Number Calculator</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  .container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  h1 {
+    text-align: center;
+  }
+  label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    box-sizing: border-box;
+  }
+  button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+  button:hover {
+    background-color: #0056b3;
+  }
+  .result {
+    margin-top: 20px;
+    font-weight: bold;
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <h1>Chaldean Destiny Number Calculator</h1>
+  <label for="name">Enter your name:</label>
+  <input type="text" id="name" placeholder="Enter your name">
+  <button onclick="calculateDestinyNumber()">Calculate</button>
+  <div class="result" id="result"></div>
+</div>
+
+<script>
+function calculateDestinyNumber() {
+  const name = document.getElementById('name').value.toUpperCase();
+  let sum = 0;
+
+  const chaldeanNumbers = {
+    'A': 1, 'I': 1, 'J': 1, 'Q': 1, 'Y': 1,
+    'B': 2, 'K': 2, 'R': 2,
+    'C': 3, 'G': 3, 'L': 3, 'S': 3,
+    'D': 4, 'M': 4, 'T': 4,
+    'E': 5, 'H': 5, 'N': 5, 'X': 5,
+    'U': 6, 'V': 6, 'W': 6,
+    'O': 7, 'Z': 7,
+    'F': 8, 'P': 8
+  };
+
+  for (let i = 0; i < name.length; i++) {
+    const char = name.charAt(i);
+    if (char in chaldeanNumbers) {
+      sum += chaldeanNumbers[char];
+    }
+  }
+
+  let destinyNumber = sum;
+  while (destinyNumber > 9 && ![11, 22, 33].includes(destinyNumber)) {
+    destinyNumber = sumDigits(destinyNumber);
+  }
+
+  let description = '';
+  switch (destinyNumber) {
+    case 1:
+      description = "You radiate with a dynamic and efficient energy.";
+      break;
+    case 2:
+      description = "You appear friendly and unpretentious.";
+      break;
+    case 3:
+      description = "You are uplifting, inspiring, and charming.";
+      break;
+    case 4:
+      description = "You love the intimacy, consistency, and the security a family provides.";
+      break;
+    case 5:
+      description = "You are a stimulating person.";
+      break;
+    case 6:
+      description = "You radiate understanding and compassion.";
+      break;
+    case 7:
+      description = "You seem mysterious and different.";
+      break;
+    case 8:
+      description = "You appear strong and powerful.";
+      break;
+    case 9:
+      description = "You have an impressive and aristocratic bearing.";
+      break;
+    case 11:
+      description = "You have worked hard to gain confidence and overcome, at least to some extent, an in-born shyness.";
+      break;
+    case 22:
+      description = "You radiate reliability and consistency.";
+      break;
+    case 33:
+      description = "You inspire confidence.";
+      break;
+    default:
+      break;
+  }
+
+  document.getElementById('result').innerHTML = `Your Chaldean Destiny Number is ${destinyNumber}.<br>${description}`;
+}
+
+function sumDigits(num) {
+  let sum = 0;
+  while (num > 0) {
+    sum += num % 10;
+    num = Math.floor(num / 10);
+  }
+  return sum;
+}
+</script>
+
+</body>
+</html>

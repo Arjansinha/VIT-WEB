@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JavaScript String Functions</title>
+</head>
+<body>
+
+<div>
+  <h2>JavaScript String Functions</h2>
+  <p>Input String: "The mice jumped over the cat, giggling madly as the moon"</p>
+</div>
+
+<script>
+const str = "The mice jumped over the cat, giggling madly as the moon";
+
+
+const charArray = Array.from(str);
+document.write("<div><h3>Character Array:</h3>");
+document.write(`<p>${charArray}</p></div>`);
+
+
+const sequence = "mice";
+const containsSequence = str.includes(sequence);
+document.write("<div><h3>Contains 'mice'?</h3>");
+document.write(`<p>${containsSequence ? "Yes" : "No"}</p></div>`);
+
+
+const lastIndex = str.lastIndexOf("the");
+document.write("<div><h3>Last Occurrence of 'the':</h3>");
+document.write(`<p>${lastIndex}</p></div>`);
+
+
+const slicedStr = str.slice(4, -1);
+document.write("<div><h3>Sliced String (from index 4 to last-1):</h3>");
+document.write(`<p>${slicedStr}</p></div>`);
+</script>
+
+</body>
+</html>

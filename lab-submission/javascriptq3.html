@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Feng Shui House Number Calculator</title>
+</head>
+<body>
+
+<div>
+  <textarea id="address" rows="5" cols="50" placeholder="Enter your address"></textarea><br>
+  <button onclick="calculateFengShuiHouseNumber()">Calculate</button>
+</div>
+<div id="result"></div>
+
+<script>
+function calculateFengShuiHouseNumber() {
+  const address = document.getElementById('address').value;
+  const numbers = extractNumbers(address);
+  const fengShuiHouseNumber = reduceToSingleDigit(numbers);
+  const significance = getSignificance(fengShuiHouseNumber);
+  document.getElementById('result').innerText = significance;
+}
+
+function extractNumbers(text) {
+  const regex = /\d/g;
+  return text.match(regex).map(Number);
+}
+
+function reduceToSingleDigit(numbers) {
+  let sum = numbers.reduce((acc, curr) => acc + curr, 0);
+  while (sum > 9) {
+    sum = sum.toString().split('').map(Number).reduce((acc, curr) => acc + curr, 0);
+  }
+  return sum;
+}
+
+function getSignificance(number) {
+  switch (number) {
+    case 0:
+      return "Potential";
+    case 1:
+      return "New Beginnings";
+    case 2:
+      return "Balance";
+    case 3:
+      return "Family";
+    case 4:
+      return "Stability";
+    case 5:
+      return "Adventure";
+    case 6:
+      return "Calm, Patience";
+    case 7:
+      return "Contemplation, Solitude";
+    case 8:
+      return "Abundance, Success in Business";
+    case 9:
+      return "Accomplishment";
+    default:
+      return "";
+  }
+}
+</script>
+
+</body>
+</html>

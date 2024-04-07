@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Phone Number Validation</title>
+<script>
+function validatePhoneNumber() {
+    var phoneNumber = document.getElementById("phoneNumber").value;
+    var regex = /^(\d{3})[- ]?(\d{3})[- ]?(\d{4})$/;
+
+    if (regex.test(phoneNumber)) {
+        document.getElementById("result").innerHTML = "Valid phone number";
+    } else {
+        document.getElementById("result").innerHTML = "Invalid phone number";
+    }
+}
+</script>
+</head>
+<body>
+<h2>Phone Number Validation</h2>
+<p>Enter a phone number:</p>
+<input type="text" id="phoneNumber">
+<button onclick="validatePhoneNumber()">Validate</button>
+<p id="result"></p>
+</body>
+</html>

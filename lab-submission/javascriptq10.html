@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vowel-Start Word Validation</title>
+<script>
+function validateWord() {
+    var word = document.getElementById("word").value;
+    var regex = /^[aeiou][a-z]*[^aeiou]$/i;
+
+    if (regex.test(word)) {
+        document.getElementById("result").innerHTML = "Valid word";
+    } else {
+        document.getElementById("result").innerHTML = "Invalid word";
+    }
+}
+</script>
+</head>
+<body>
+<h2>Vowel-Start Word Validation</h2>
+<p>Enter a word:</p>
+<input type="text" id="word">
+<button onclick="validateWord()">Validate</button>
+<p id="result"></p>
+</body>
+</html>

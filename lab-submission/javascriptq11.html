@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>URL Validation</title>
+<script>
+function validateURL() {
+    var url = document.getElementById("url").value;
+    var regex = /^[a-zA-Z0-9_]+(?:\.[a-zA-Z0-9_]+)*\.[a-zA-Z]{2,}$/;
+
+    if (regex.test(url)) {
+        document.getElementById("result").innerHTML = "Valid URL";
+    } else {
+        document.getElementById("result").innerHTML = "Invalid URL";
+    }
+}
+</script>
+</head>
+<body>
+<h2>URL Validation</h2>
+<p>Enter a URL:</p>
+<input type="text" id="url">
+<button onclick="validateURL()">Validate</button>
+<p id="result"></p>
+</body>
+</html>

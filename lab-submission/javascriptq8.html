@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>First Alphabetic Word Extraction</title>
+<script>
+function extractFirstWord() {
+    var inputString = document.getElementById("inputString").value;
+    var regex = /^[a-zA-Z]+/;
+
+    var result = inputString.match(regex);
+
+    if (result) {
+        document.getElementById("output").innerHTML = "First alphabetic word: " + result[0];
+    } else {
+        document.getElementById("output").innerHTML = "No alphabetic word found at the start of the string.";
+    }
+}
+</script>
+</head>
+<body>
+<h2>First Alphabetic Word Extraction</h2>
+<p>Enter a string:</p>
+<input type="text" id="inputString">
+<button onclick="extractFirstWord()">Extract</button>
+<p id="output"></p>
+</body>
+</html>
